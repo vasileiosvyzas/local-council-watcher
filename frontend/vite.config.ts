@@ -14,4 +14,5 @@ export default defineConfig({
       allow: ['..']   // allow serving files from the project root
     }
   }
+  
 })

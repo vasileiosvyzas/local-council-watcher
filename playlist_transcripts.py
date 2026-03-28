@@ -197,8 +197,8 @@ def download_audio_mp3(video_url: str, base_filename: str, audio_dir: str) -> Op
         "postprocessors": [
             {
                 "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",
-                "preferredquality": "192",
+                "preferredcodec": "wav"
+                # "preferredquality": "192",
             }
         ],
     }
@@ -214,8 +214,8 @@ def download_audio_mp3(video_url: str, base_filename: str, audio_dir: str) -> Op
         return None
 
     # After FFmpegExtractAudio, the extension should be .mp3
-    mp3_path = os.path.join(audio_dir, base_filename + ".mp3")
-    return mp3_path if os.path.exists(mp3_path) else None
+    wav_path = os.path.join(audio_dir, base_filename + ".wav")
+    return wav_path if os.path.exists(wav_path) else None
 
 
 def main() -> None:
